@@ -1,8 +1,7 @@
 require 'rubygems'
 require 'openssl'
 require 'rest-client'
-require 'active_support'
-require 'pry'
+
 module BsdApi
   class XmlGenerator
     def self.get_xml(params = {})
@@ -36,7 +35,7 @@ module BsdApi
       make_url(api_host_name, api_path, api_id, api_secret)
     end
     class << self
-    private
+    private 
       def make_url(api_host_name, api_path, api_id, api_secret)
 
         api_ts = Time.now.utc.to_i.to_s
@@ -60,4 +59,3 @@ module BsdApi
   end
 end
 
-BsdApi::PostConstituent.make_post(params, api_host_name, api_path, api_id, api_secret)
