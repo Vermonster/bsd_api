@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = BsdApi::VERSION
   spec.authors       = ["Quinn Lee"]
   spec.email         = ["Quinn@vermonster.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{Wraper for Blue State Digital}
+  spec.summary       = %q{Posts a request to create a constituent}
   spec.homepage      = ""
   spec.license       = "MIT"
 
