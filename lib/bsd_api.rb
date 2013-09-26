@@ -53,7 +53,14 @@ module BsdApi
     def self.make_post(params, api_host_name, api_path, api_id, api_secret)
       xml = BsdApi::XmlGenerator.get_xml(params)
       url = BsdApi::UrlGenerator.get_url(api_host_name, api_path, api_id, api_secret)
-      RestClient.post url, xml, :content_type=> "text/xml" 
+      
+      RestClient.post (url, xml, :content_type=> "text/xml"){ |response, request, result, &block| 
+        if [200,202].include? response.code
+          true
+        else
+          false
+        end
+      }
     end
   end
 end
