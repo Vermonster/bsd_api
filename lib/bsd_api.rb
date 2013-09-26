@@ -12,7 +12,7 @@ module BsdApi
         first_name = params[:first_name]
         last_name = params[:last_name]
         email = params[:email]
-        user_name = params[:user_name]
+        username = params[:username]
         created_at = params[:created_at]
         xml = ["<?xml version='1.0' encoding='utf-8'?>"]
         xml << "<api>"
@@ -20,8 +20,8 @@ module BsdApi
         xml << "<cons_group id='1305'/>"
         xml << "<firstname>#{first_name}</firstname>" unless first_name.nil?
         xml << "<lastname>#{last_name}</lastname>" unless last_name.nil?
-        xml << "<cons_email><email>#{email}</email></cons_email>" unless email.nil?
-        xml << "<cons_field id='20'><value>#{user_name}</value></cons_field>" unless user_name.nil?
+        xml << "<cons_email><email>#{email}</email></cons_email>" 
+        xml << "<cons_field id='20'><value>#{username}</value></cons_field>"
         xml << "<cons_field id='22'><value>#{created_at}</value></cons_field>"
         xml << "</cons>"
         xml << "</api>"
