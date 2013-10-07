@@ -14,6 +14,7 @@ module BsdApi
         email = params[:email]
         username = params[:username]
         created_at = params[:created_at]
+        created_string = params[:created_string]
         group_id = params[:group_id]
         xml = ["<?xml version='1.0' encoding='utf-8'?>"]
         xml << "<api>"
@@ -24,6 +25,7 @@ module BsdApi
         xml << "<cons_email><email>#{email}</email></cons_email>" 
         xml << "<cons_field id='20'><value>#{username}</value></cons_field>"
         xml << "<cons_field id='22'><value>#{created_at}</value></cons_field>"
+        xml << "<cons_field id='53'><value>#{created_string}</value></cons_field>"
         xml << "</cons>"
         xml << "</api>"
         xml.join
