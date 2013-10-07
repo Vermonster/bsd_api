@@ -1,5 +1,6 @@
 require 'openssl'
 require 'rest-client'
+require 'bsd_api/version'
 
 module BsdApi
   class XmlGenerator
