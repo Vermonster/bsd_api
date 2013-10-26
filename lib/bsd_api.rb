@@ -15,7 +15,7 @@ module BsdApi
         email = params[:email]
         username = params[:username]
         created_at = params[:created_at]
-        created_string = params[:created_string]
+        created_string = params[:created_string] || Time.now.strftime("%m/%d/%Y")
         group_id = params[:group_id]
         xml = ["<?xml version='1.0' encoding='utf-8'?>"]
         xml << "<api>"
