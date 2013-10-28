@@ -16,11 +16,11 @@ module BsdApi
         username = params[:username]
         created_at = params[:created_at]
         created_string = params[:created_string] || Time.now.strftime("%m/%d/%Y")
-        group_id = params[:group_id]
+        group_id = params[:group_id].to_s
         xml = ["<?xml version='1.0' encoding='utf-8'?>"]
         xml << "<api>"
         xml << "<cons send_password='n'>"
-        xml << "<cons_group id=#{group_id}/>" unless group_id.nil?
+        xml << "<cons_group id='#{group_id}'/>" unless group_id.nil?
         xml << "<firstname>#{first_name}</firstname>" unless first_name.nil?
         xml << "<lastname>#{last_name}</lastname>" unless last_name.nil?
         xml << "<cons_email><email>#{email}</email></cons_email>" 
